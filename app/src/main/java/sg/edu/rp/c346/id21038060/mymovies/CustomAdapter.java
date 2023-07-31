@@ -1,15 +1,12 @@
 package sg.edu.rp.c346.id21038060.mymovies;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.DrawableRes;
 
 import com.squareup.picasso.Picasso;
 
@@ -51,28 +48,25 @@ public class CustomAdapter extends ArrayAdapter {
         tvGenre.setText(currentMovie.getGenre());
         tvYear.setText(String.valueOf(currentMovie.getYear()));
 
-        Log.d("TAG", currentMovie.getTitle());
-        Log.d("TAG", currentMovie.getRating());
-
-        if (currentMovie.getRating() == "G") {
-            imageViewRating.setImageResource(R.drawable.rating_g);
-            //Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/general-rating.webp").into(imageViewRating);
-        }
-        else if (currentMovie.getRating() == "PG") {
-            Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/pg-rating.webp").into(imageViewRating);
-        }
-        else if (currentMovie.getRating() == "PG13") {
-            Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/pg13-rating.webp").into(imageViewRating);
-        }
-        else if (currentMovie.getRating() == "NC16") {
-            imageViewRating.setImageResource(R.drawable.rating_nc16);
-            //Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/nc16-rating.webp").into(imageViewRating);
-        }
-        else if (currentMovie.getRating() == "M18") {
-            Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/m18-rating.webp").into(imageViewRating);
-        }
-        else { //R21
-            Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/r21-rating.webp").into(imageViewRating);
+        switch (currentMovie.getRating()) {
+            case "G":
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/general-rating.webp").into(imageViewRating);
+                break;
+            case "PG":
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/pg-rating.webp").into(imageViewRating);
+                break;
+            case "PG13":
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/pg13-rating.webp").into(imageViewRating);
+                break;
+            case "NC16":
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/nc16-rating.webp").into(imageViewRating);
+                break;
+            case "M18":
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/m18-rating.webp").into(imageViewRating);
+                break;
+            default:  //R21
+                Picasso.with(parent_context).load("https://www.imda.gov.sg/-/media/imda/images/content/regulation-licensing-and-consultations/content-standards-and-classification/classification-rating/r21-rating.webp").into(imageViewRating);
+                break;
         }
         return rowView;
     }

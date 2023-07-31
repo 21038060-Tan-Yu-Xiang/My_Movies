@@ -7,7 +7,7 @@
     android:background="@drawable/bg"
     android:gravity="center|center_vertical"
     android:orientation="vertical"
-    android:paddingRight="22dp"
+    android:paddingEnd="22dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="30dp"
-        android:text="Add New Movie"
+        android:text="@string/add_new_movie"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF" />
 
@@ -23,37 +23,40 @@
         android:id="@+id/etTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/movie"
+        android:drawableStart="@drawable/movie"
         android:drawablePadding="20dp"
         android:ems="10"
-        android:hint="Movie Title"
+        android:hint="@string/movie_title2"
         android:inputType="text"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#FFFFFF"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/etGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/genres"
+        android:drawableStart="@drawable/genres"
         android:drawablePadding="20dp"
         android:ems="10"
-        android:hint="Genre"
+        android:hint="@string/genre3"
         android:inputType="text"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#FFFFFF"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/etYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/year"
+        android:drawableStart="@drawable/year"
         android:drawablePadding="20dp"
         android:ems="10"
-        android:hint="Year"
+        android:hint="@string/year3"
         android:inputType="number"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF" />
+        android:textColorHint="#FFFFFF"
+        android:importantForAutofill="no" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -65,9 +68,9 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingRight="20dp"
-            app:srcCompat="@drawable/restricted" />
+            android:paddingEnd="20dp"
+            app:srcCompat="@drawable/restricted"
+            android:importantForAccessibility="no" />
 
         <Spinner
             android:id="@+id/spnRatings"
@@ -85,16 +88,16 @@
         android:paddingTop="30dp">
 
         <Button
-            android:id="@+id/btnInsert"
+            android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="INSERT" />
+            android:text="@string/insert" />
 
         <Button
-            android:id="@+id/btnShow"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SHOW LIST" />
+            android:text="@string/show_list" />
     </LinearLayout>
 
 </LinearLayout>

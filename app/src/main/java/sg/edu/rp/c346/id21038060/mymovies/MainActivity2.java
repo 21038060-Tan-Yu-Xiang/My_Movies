@@ -28,6 +28,8 @@ public class MainActivity2 extends AppCompatActivity {
         al.clear();
         al.addAll(db.getMovies());
         adapter.notifyDataSetChanged();
+
+        btnShowMain.performClick();
     }
 
     @Override
@@ -40,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
         lvMovies = findViewById(R.id.lvMovies);
 
         String[] yourDataArray = {"G", "PG", "PG13", "NC16", "M18", "R21"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, R.layout.spinner_list, yourDataArray);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_list, yourDataArray);
         spnRatingsMain.setAdapter(adapter2);
 
         al = new ArrayList<>();
@@ -69,7 +71,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 al.clear();
-                al.addAll(db.getAllMoviesFliterByRating(spnRatingsMain.toString()));
+                al.addAll(db.getAllMoviesFliterByRating(spnRatingsMain.getSelectedItem().toString()));
                 adapter.notifyDataSetChanged();
             }
         });

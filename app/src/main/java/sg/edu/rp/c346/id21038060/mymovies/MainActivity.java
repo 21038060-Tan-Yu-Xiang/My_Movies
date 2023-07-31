@@ -3,7 +3,6 @@ package sg.edu.rp.c346.id21038060.mymovies;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,8 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         etGenre = findViewById(R.id.etGenre);
         etYear = findViewById(R.id.etYear);
         spnRatings = findViewById(R.id.spnRatings);
-        btnInsert = findViewById(R.id.btnInsert);
-        btnShow = findViewById(R.id.btnShow);
+        btnInsert = findViewById(R.id.btnUpdate);
+        btnShow = findViewById(R.id.btnDelete);
 
         String[] yourDataArray = {"G", "PG", "PG13", "NC16", "M18", "R21"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_list, yourDataArray);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_list, yourDataArray);
         spnRatings.setAdapter(adapter);
 
         // Create the DBHelper object, passing in the activity's Context
